@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<style>
+			.expansion{
+				
+			}
+			
+			.accordion-cell{
+				margin-bottom:20px;
+				width:418px;
+				border:1px solid #72bf44;
+			}
+			
+			.accordion-cell .parttitle{
+				width:418px;
+				height:58px;
+				background-color:#72bf44;
+				color:#fff;
+			}
+			.accordion-cell .parttitle .headpic{
+				float:left;
+				margin:14px 10px;
+				width:32px;
+				height:32px;
+			}
+			
+			.accordion-cell .parttitle span{
+				line-height:3.5;
+				font-size:16px;
+				text-transform:uppercase;
+			}
+			
+			.accordion-cell .parttitle .up, .accordion-cell .parttitle .down{
+				float:right;
+				margin:20px 20px 25px 0;
+				border-right: 10px solid transparent;
+				border-left: 10px solid transparent;
+			}
+			
+			.accordion-cell .parttitle .down {
+				margin-top:25px;
+				border-top: 10px solid white;
+				
+			}
+			
+			.accordion-cell .parttitle .up {
+				margin-top:24px;
+				border-bottom: 10px solid white;
+			}
+			
+			.accordion-cell .partcontent{
+				display:none;
+				width:418px;
+				height:317px;
+				overflow-y:auto;
+				background-color:#f8f8f8;
+			}
+		</style>
+		
+		<script>
+			var tempSelected;
+			$(function(){
+				$('.parttitle').click(function(){
+					if($(this).next().css('display') !=='block' )
+					{
+						$('.partcontent').slideUp('slow');
+						$('.up').addClass('down');
+						$('.up').removeClass('up');
+						$(this).next().slideDown('slow');
+						$('.down',this).addClass('up');
+						$('.down',this).removeClass('down');
+					}
+					tempSelected =$(this);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="accordion-cell">
+			<div class="parttitle">
+				<div class="headpic" style="background-image:url('images/web/my favourite links.png')"></div>
+				<span>my favourite links</span>
+				<div class="up"></div>
+			</div>
+			<div class="partcontent" style="display:block;">
+				gddddd ddfd dfdfdfdfsdsfdsff datad datalistg georgian
+			</div>
+		</div>
+		
+		<div class="accordion-cell">
+			<div class="parttitle">
+				<div class="headpic" style="background-image:url('images/web/application links.png')"></div>
+				<span>my favourite links</span>
+				<div class="down"></div>
+			</div>
+			<div class="partcontent">
+				<div class="accordion-cell">
+					<div class="parttitle">
+						<div class="headpic" style="background-image:url('images/web/application links.png')"></div>
+						<span>my favourite links</span>
+						<div class="down"></div>
+					</div>
+					<div class="partcontent">
+						gddddd ddfd dfdfdfdfsdsfdsff datad datalistg georgian
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
